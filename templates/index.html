@@ -1,0 +1,35 @@
+<html>
+  <head>
+  	<style>
+  			.land:hover {
+  				fill: cornflowerblue;
+  			}
+  			#video {
+  				display: none;
+  			}
+  	</style>
+  	<script type='text/javascript'>
+  		window.onload = function() {
+  			console.log('onload')
+				document.getElementById('map-container').onclick = function(e) {
+					if (e.target.tagName === 'path' && e.target.className.baseVal === 'land') {
+						var state = e.target.getAttribute('title');
+						document.getElementById('test').innerText = state;
+						var video = document.getElementById('video');
+						video.setAttribute('src', 'https://www.youtube.com/embed/NjVugzSR7HA');
+						video.style.display = 'initial'
+					}
+				}
+			}
+  	</script>
+  </head>
+  <body>
+  	<iframe id='video' width='420' height='315'></iframe>
+  	<div id='test'></div>
+  	<div id='map-container'>
+    	{{ map_text|safe }}
+    </div>
+  </body>
+</html>
+
+<!-- {id:"US-AK"},{id:"US-AL"},{id:"US-AR"},{id:"US-AZ"},{id:"US-CA"},{id:"US-CO"},{id:"US-CT"},{id:"US-DC"},{id:"US-DE"},{id:"US-FL"},{id:"US-GA"},{id:"US-HI"},{id:"US-IA"},{id:"US-ID"},{id:"US-IL"},{id:"US-IN"},{id:"US-KS"},{id:"US-KY"},{id:"US-LA"},{id:"US-MA"},{id:"US-MD"},{id:"US-ME"},{id:"US-MI"},{id:"US-MN"},{id:"US-MO"},{id:"US-MS"},{id:"US-MT"},{id:"US-NC"},{id:"US-ND"},{id:"US-NE"},{id:"US-NH"},{id:"US-NJ"},{id:"US-NM"},{id:"US-NV"},{id:"US-NY"},{id:"US-OH"},{id:"US-OK"},{id:"US-OR"},{id:"US-PA"},{id:"US-RI"},{id:"US-SC"},{id:"US-SD"},{id:"US-TN"},{id:"US-TX"},{id:"US-UT"},{id:"US-VA"},{id:"US-VT"},{id:"US-WA"},{id:"US-WI"},{id:"US-WV"},{id:"US-WY"} -->
