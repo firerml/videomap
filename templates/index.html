@@ -13,6 +13,10 @@
   			console.log('onload')
 				document.getElementById('map-container').onclick = function(e) {
 					if (e.target.tagName === 'path' && e.target.className.baseVal === 'land') {
+						var states = document.getElementsByClassName('land');
+						for (var i = 0; i < states.length; i++) {
+							states[i].style.fill = '#CCCCCC';
+						}
 						var state = e.target;
 						state.style.fill = 'green';
 						var video = document.getElementById('video');
