@@ -13,8 +13,8 @@
   			console.log('onload')
 				document.getElementById('map-container').onclick = function(e) {
 					if (e.target.tagName === 'path' && e.target.className.baseVal === 'land') {
-						var state = e.target.getAttribute('title');
-						document.getElementById('test').innerText = state;
+						var state = e.target;
+						state.style.fill = 'green';
 						var video = document.getElementById('video');
 						video.setAttribute('src', 'https://www.youtube.com/embed/NjVugzSR7HA');
 						video.style.display = 'initial'
